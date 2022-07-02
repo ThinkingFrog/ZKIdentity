@@ -1,9 +1,7 @@
 mod core;
 use crate::core::hasher::hash_u8_vec;
+use crate::core::verifier::{verify_age, verify_country};
 use crate::core::{Parameters, TrustedCenter, User};
-
-mod verifier;
-use verifier::{verify_age, verify_country};
 
 mod circuits;
 

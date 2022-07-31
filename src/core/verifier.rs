@@ -1,5 +1,5 @@
-use crate::core::utils::*;
 use crate::core::TrustedCenter;
+use crate::utils::*;
 
 use bellman::groth16;
 use bls12_381::Bls12;

@@ -25,11 +25,11 @@ impl Parameters {
         }
     }
 
-    pub fn age_params(&self) -> groth16::Parameters<Bls12> {
-        self.age_params.to_owned()
+    pub fn age_params(&self) -> &groth16::Parameters<Bls12> {
+        &self.age_params
     }
 
-    pub fn country_params(&self) -> groth16::Parameters<Bls12> {
-        self.country_params.to_owned()
+    pub fn country_params(&self) -> &groth16::Parameters<Bls12> {
+        &self.country_params
     }
 }

@@ -66,11 +66,11 @@ impl TrustedCenter {
         self.add_user_country(&user_id_hash, &user.country(), country_params);
     }
 
-    pub fn get_age_proof(&self, id_hash: &Vec<u8>) -> groth16::Proof<Bls12> {
-        self.age_proof_by_id.get(id_hash).unwrap().to_owned()
+    pub fn get_age_proof(&self, id_hash: &Vec<u8>) -> &groth16::Proof<Bls12> {
+        &self.age_proof_by_id.get(id_hash).unwrap()
     }
 
-    pub fn get_country_proof(&self, id_hash: &Vec<u8>) -> groth16::Proof<Bls12> {
-        self.country_proof_by_id.get(id_hash).unwrap().to_owned()
+    pub fn get_country_proof(&self, id_hash: &Vec<u8>) -> &groth16::Proof<Bls12> {
+        &self.country_proof_by_id.get(id_hash).unwrap()
     }
 }

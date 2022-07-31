@@ -4,6 +4,7 @@ use crate::core::verifier::{verify_age, verify_country};
 use crate::core::{Parameters, TrustedCenter, User};
 
 mod circuits;
+mod utils;
 
 fn main() {
     let params = Parameters::new();

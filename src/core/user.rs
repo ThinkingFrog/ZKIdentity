@@ -1,4 +1,4 @@
-use crate::core::utils::string_to_u8_40_array;
+use crate::utils::string_to_u8_40_array;
 use rand::Rng;
 
 pub struct User {
@@ -21,8 +21,8 @@ impl User {
         self.age
     }
 
-    pub fn id(&self) -> Vec<u8> {
-        self.id.to_owned()
+    pub fn id(&self) -> &Vec<u8> {
+        &self.id
     }
 
     pub fn country(&self) -> [u8; 40] {

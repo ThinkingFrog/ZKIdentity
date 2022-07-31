@@ -60,7 +60,7 @@ impl TrustedCenter {
         age_params: &groth16::Parameters<Bls12>,
         country_params: &groth16::Parameters<Bls12>,
     ) {
-        let user_id_hash = hash_u8_vec(&user.id());
+        let user_id_hash = hash_u8_vec(user.id());
 
         self.add_user_age(&user_id_hash, user.age(), age_params);
         self.add_user_country(&user_id_hash, &user.country(), country_params);

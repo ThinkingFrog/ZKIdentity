@@ -20,25 +20,22 @@ fn main() {
 
     let mut tc = TrustedCenter::new();
     for user in users.iter() {
-        tc.add_user(&user, &params.age_params(), &params.country_params());
+        tc.add_user(&user, params.age_params(), params.country_params());
     }
 
     for (idx, user) in users.iter().enumerate() {
-        match verify_age(
-            &hash_u8_vec(&user.id()),
-            &valid_age_range,
-            &tc,
-            &params.age_params(),
-        ) {
+        let user_id_hash = hash_u8_vec(user.id());
+
+        match verify_age(&user_id_hash, &valid_age_range, &tc, params.age_params()) {
             true => println!("User {} has passed age check", idx + 1),
             false => println!("User {} has failed age check", idx + 1),
         }
 
         match verify_country(
-            &hash_u8_vec(&user.id()),
+            &user_id_hash,
             &valid_countries,
             &tc,
-            &params.country_params(),
+            params.country_params(),
         ) {
             true => println!("User {} has passed country check", idx + 1),
             false => println!("User {} has failed country check", idx + 1),
